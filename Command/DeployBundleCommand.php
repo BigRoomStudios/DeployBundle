@@ -42,7 +42,7 @@ class DeployBundleCommand extends ContainerAwareCommand
 				
 				$output->writeln($ssh . ":" . $app);
 				
-				$command = "ssh $ssh 'cd $app; app/console deploy'";
+				$command = "ssh $ssh 'cd $app; git pull; bin/bundles; app/console deploy'";
 				
 				passthru($command);
 								
@@ -55,11 +55,13 @@ class DeployBundleCommand extends ContainerAwareCommand
 			
 			$output->writeln("Deploying");
 			
-			passthru("git pull");
+			//passthru("git pull");
+			//passthru("bin/bundles");
+			passthru("app/console cache:clear");
 			passthru("app/console src:update");
 			passthru("app/console assets:install --symlink web");
 			passthru("app/console assetic:dump --env=prod");
-			passthru("app/console cache:clear --env=prod --warmup");
+			passthru("app/console cache:clear --env=prod");
 		}
 		
 		
