@@ -3,9 +3,11 @@ git based deployment for BRS symfony projects
 usage:
 
 deploys the "prod" version of the existing app:
+
     app/console deploy
 
 deploys to the production site and updates the prod cache:
+
     app/console deploy prod
 
 configuration example:
