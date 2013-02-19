@@ -59,6 +59,7 @@ class DeployBundleCommand extends ContainerAwareCommand
 			//passthru("bin/bundles");
 			passthru("app/console cache:clear");
 			passthru("app/console src:update");
+			passthru("app/console doctrine:schema:update --force");
 			passthru("app/console assets:install --symlink web");
 			passthru("app/console assetic:dump --env=prod");
 			passthru("app/console cache:clear --env=prod");
