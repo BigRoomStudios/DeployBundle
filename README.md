@@ -2,7 +2,7 @@ git based deployment for BRS symfony projects
 
 usage:
 
-deploys the "prod" version of the existing app:
+deploys to the "prod" environment of the current app:
 
     app/console deploy
 
