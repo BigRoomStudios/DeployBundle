@@ -1,14 +1,16 @@
 git based deployment for BRS symfony projects
 
-usage:
 
-deploys to the "prod" environment of the current app:
+
+deploy to the "prod" environment of the current app:
 
     app/console deploy
 
-deploys to the production site and updates the prod cache:
+
+deploy to the production site then update the "prod" environment:
 
     app/console deploy prod
+
 
 configuration example:
 
@@ -25,7 +27,7 @@ configuration example:
 In this example, the target location has a user named "deploy" who:
   * has the local user's public key installed in it's .ssh/authorized_keys file
   * has proper filesystem access to the app location
-  * has pull access to all re remote repos
+  * has pull access to all remote repos
   
 You would configure ssh port on the remote machine using your local .ssh/config file.
 
